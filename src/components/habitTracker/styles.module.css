@@ -36,6 +36,7 @@
     .cell button { width:29px; height:29px; display:grid; place-items:center; border:1px solid var(--line); border-radius:9px; color:transparent; background:var(--paper);
         svg { width:14px; } &:hover { border-color:var(--accent); box-shadow:0 2px 8px #7757c220; }
     }
+    .cell button:disabled { opacity:.42; &:hover { border-color:var(--line); box-shadow:none; } }
     .cell button.checked { color:white; border-color:var(--accent); background:var(--accent); }
     .streak { display:flex; align-items:center; justify-content:center; gap:4px; color:#ab7b32; font-size:12px; font-weight:750;
         small { color:var(--muted); font-size:9px; }
