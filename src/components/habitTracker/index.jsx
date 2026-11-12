@@ -114,6 +114,7 @@ const HabitTracker = () => {
         if (!removing) return undefined;
 
         const previouslyFocused = document.activeElement;
+        const addInput = addInputRef.current;
         cancelRef.current?.focus();
 
         const onKeyDown = (event) => {
@@ -150,7 +151,7 @@ const HabitTracker = () => {
             if (previouslyFocused instanceof HTMLElement && previouslyFocused.isConnected) {
                 previouslyFocused.focus();
             } else {
-                addInputRef.current?.focus();
+                addInput?.focus();
             }
         };
     }, [removing]);
@@ -241,7 +242,7 @@ const HabitTracker = () => {
             <div className={styles.weekBar} id="week">
                 <div>
                     <FiZap aria-hidden="true" />
-                    <span><small>This week</small><strong>{weekHits} check-ins</strong></span>
+                    <span><small>Selected week</small><strong>{weekHits} check-ins</strong></span>
                 </div>
                 <div className={styles.weekProgress}>
                     <span>{Math.round(progress)}% of weekly check-ins</span>
